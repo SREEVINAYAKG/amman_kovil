@@ -14,28 +14,73 @@
         <div class="logo">🕉️ <a href="index.html">Amman Kovil Kottarakara</a></div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="pooja.html">Book Pooja</a></li>
+            <li><a href="javascript:void(0)" onclick="openPopup()">Book Pooja</a></li>
         </ul>
     </nav>
-
     <!-- Single Form Section -->
     <div class="forms-background" style="background-image: url('./assets/images/devi_2.jpg');">
         <div class="forms-overlay"></div>
         
         <div class="container relative-z" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh;">
-            <div class="form-header text-center text-white">
-                <h1>Contact Us</h1>
-                <p>Have a question? Reach out to the committee.</p>
-            </div>
+            <!-- The main box holding the buttons and form -->
+            <div class="contact-card">
+                
+                <div style="text-align: center; margin-bottom: 30px; padding-bottom: 25px; border-bottom: 1px solid #ddd;">
+                    <h3 style="margin-bottom: 5px; color: #2C1B10; font-size: 1.5rem;">Our Committee Contact</h3>
+                    <p style="color: #666; margin-bottom: 20px; font-size: 0.9rem;">Tap any number below to call us instantly.</p>
+                    
+                    <!-- The 3 Clickable Phone Numbers -->
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+                        <a href="tel:+918848034193" class="btn-primary" style="text-decoration: none; padding: 10px 20px; font-size: 0.95rem;">📞 88480 34193</a>
+                        <a href="tel:+917736194494" class="btn-primary" style="text-decoration: none; padding: 10px 20px; font-size: 0.95rem;">📞 77361 94494</a>
+                        <a href="tel:+918113944017" class="btn-primary" style="text-decoration: none; padding: 10px 20px; font-size: 0.95rem;">📞 81139 44017</a>
+                    </div>
+                        <a href="https://wa.me/918848034193" target="_blank" style="background: #25D366; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">💬 WhatsApp</a>
+                    </div>
 
-            <div class="single-form-box">
+                <!-- Google Form Section -->
+                <h3 style="text-align: center; margin-bottom: 15px; color: #2C1B10;">Or Leave a Message</h3>
                 <div class="iframe-wrapper">
-                    <!-- PASTE "CONTACT US" GOOGLE FORM HERE -->
-                    <!-- <p class="text-center"><i>[Paste Contact Google Form here]</i></p> -->
-                     <p class="text-center"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLScNmxk3KteY2Sw_GdhqV8U6boSvprLZAxBShLoPcb30D0C3PQ/viewform?embedded=true" width="100%" height="743" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></p>
+                     <p class="text-center">
+                         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScNmxk3KteY2Sw_GdhqV8U6boSvprLZAxBShLoPcb30D0C3PQ/viewform?embedded=true" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>   
+                     </p>
                 </div>
+
             </div>
         </div>
     </div>
+   <div id="bookingPopup" class="modal-overlay">
+        <div class="modal-content">
+            <!-- The X button to close -->
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            
+            <h3 style="color: var(--primary-color); margin-bottom: 10px; font-size: 1.8rem;">Book a Pooja</h3>
+            <p style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">
+                Calculate your total from the menu, scan the QR code to pay, and message us the details on WhatsApp!
+            </p>
+            <img src="./assets/images/qr.jpg" alt="UPI QR Code" style="width: 180px; height: 180px; border-radius: 10px; border: 2px solid #ddd; margin-bottom: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div style="text-align: center; padding-top: 1px; border-top: 1px; font-weight: 800; color: var(--primary-color); font-size: 1.1rem;">
+                UPI ID : ammanovil232qr@fbl
+            </div>
+            <div style="font-size: 0.95rem; font-weight: bold; margin-bottom: 25px; color: #2C1B10; text-align: left; background: #f9f9f9; padding: 15px; border-radius: 10px;">
+                Please WhatsApp us:<br>
+                ✅ 1. Name & Nakshatra (നക്ഷത്രം)<br>
+                ✅ 2. Selected Poojas & Dates<br>
+                ✅ 3. Payment Screenshot
+            </div>
+
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/918848034193" target="_blank" style="display: block; background: #25D366; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);">
+                💬 Send Details on WhatsApp
+            </a>
+            
+            <!-- Phone Numbers -->
+            <p style="font-size: 0.85rem; color: #777;">Or call for assistance:<br>📞 <a href="tel:8848034193" style="color: #D32F2F;">88480 34193</a> | <a href="tel:7736194494" style="color: #D32F2F;">77361 94494</a></p>
+        </div>
+    </div>
+    <footer>
+            <p>&copy; 2026 Amman Kovil Devi Temple. All rights reserved.</p>
+    </footer>
+     <script src="script.js"></script>
 </body>
 </html>

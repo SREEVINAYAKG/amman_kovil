@@ -295,6 +295,84 @@ h2 {
     border-radius: 20px;
     padding: 20px;
 }
+
+
+/* =========================================
+   SPECIAL OFFERINGS CARDS
+   ========================================= */
+.offerings-grid {
+    display: grid;
+    /* Automatically creates columns based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.offering-card {
+    background: var(--white);
+    border: 2px solid #EAEAEA; /* Light grey subtle border */
+    border-radius: 15px;
+    padding: 40px 25px 30px 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+    position: relative;
+}
+
+.offering-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.offering-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.offering-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    word-break: break-word; 
+    overflow-wrap: break-word;
+}
+
+/* --- THE HIGHLIGHTED SHANKHU JYOTHISHAM CARD --- */
+.highlight-card {
+    border: 3px solid #8B0000; /* Dark Red prominent border */
+    background: #FFF5F5; /* Very light warm red background */
+}
+
+.highlight-card h3 {
+    color: #8B0000; /* Dark red text */
+}
+
+.highlight-card p {
+    color: #4A1515; /* Darker, richer text color for readability */
+    font-weight: 600;
+    margin-bottom: 25px; /* Gives space for the booking button */
+}
+
+/* The small red 'Special Service' tag floating on top */
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #8B0000;
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+}
+
+
 /* Footer */
 footer {
     background: var(--light-bg);
@@ -318,17 +396,6 @@ footer {
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
-}
-/* The dark shadow overlay over the image */
-.forms-overlay {
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    /* Darkens the background image so the white form stands out clearly */
-    background: linear-gradient(rgba(0, 0, 0, 0.252), rgba(0, 0, 0, 0.5));
-    z-index: 1;
 }
 /* Forces the content to sit ON TOP of the dark overlay */
 .relative-z {
@@ -371,6 +438,70 @@ footer {
     max-width: 100%;
     border: none;
 }
+/* --- The Contact Card Style --- */
+.contact-card {
+    background-color: #FFFFFF !important; /* Forces the pure white background */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); /* Creates a deep shadow to separate it from the Devi image */
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Fix for the "Contact Us" title grey box */
+.form-header {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   POPUP MODAL STYLING
+   ========================================= */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark background */
+    z-index: 2000; /* Stays on top of everything */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    /* Creates a smooth slide-up animation */
+    animation: popupFade 0.3s ease-out; 
+}
+
+@keyframes popupFade {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover { color: #333; }
 
 
 /* Responsive Design for Mobile Phones */
@@ -390,6 +521,9 @@ footer {
     nav{
         justify-content: center;
         padding: 10px 20px;
+    }
+    .logo>a {
+        font-size: 15px;
     }
     .form-header h1 {
         font-size: 2.2rem;
@@ -423,6 +557,68 @@ footer {
     .menu-item::after {
         min-width: 5px; /* Allows the dotted line to shrink very small if needed */
         margin: 0 5px;
+    }
+    /* --- Special Offerings Mobile Fixes --- */
+    .offerings-grid {
+        gap: 20px; /* Slightly less empty space between the stacked cards */
+        margin-top: 25px;
+    }
+    
+    .offering-card {
+        /* Reduces the inner padding so the Malayalam text has more room to breathe */
+        padding: 30px 15px 20px 15px; 
+    }
+    
+    .offering-card h3 {
+        font-size: 1.3rem; /* Slightly smaller title */
+    }
+    
+    .badge {
+        /* This neatly centers the red "Special Service" badge on mobile phones! */
+        left: 50%;
+        transform: translateX(-50%); 
+    }
+    #special-offerings h2 {
+        font-size: 1.6rem; 
+        line-height: 1.4;
+        padding: 0 10px;
+        word-wrap: break-word; /* Just in case it still tries to stretch */
+    }
+    h2, 
+    .menu-title, 
+    .form-header h1,
+    #special-offerings h2 {
+        font-size: 1.8rem !important; /* Forces all titles to be exactly this size */
+        line-height: 1.3 !important;
+        margin-bottom: 20px !important;
+        text-align: center !important;
+    }
+    .contact-card{
+        padding:10px;
+    }
+        /* --- Popup Mobile Fixes --- */
+    .modal-content {
+        width: 95%; /* Takes up more of the screen width on phones */
+        padding: 25px 15px; /* Reduces side padding to give the text and QR code more room */
+        max-height: 90vh; /* Prevents the bottom from getting cut off on short screens */
+        overflow-y: auto; /* Allows smooth scrolling inside the popup ONLY if the phone is extremely small */
+    }
+    
+    .modal-content h3 {
+        font-size: 1.5rem !important; /* Slightly smaller title */
+    }
+    
+    .modal-content img {
+        width: 150px !important; /* Scales down the QR code slightly so it fits perfectly */
+        height: 150px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Make the instruction box slightly more compact */
+    .modal-content div[style*="background: #f9f9f9"] {
+        padding: 10px !important;
+        font-size: 0.85rem !important;
+        margin-bottom: 15px !important;
     }
 }
 
