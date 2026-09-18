@@ -1,0 +1,428 @@
+:root {
+    /* --primary-color: #E65100; Deep Saffron/Orange */
+    --primary-color: #cd0d0d;
+    /* --secondary-color: #FFB300; Gold */
+    --secondary-color: #d33f16; 
+    --dark-text: #2C1B10;
+    --light-bg: #FFF8F0;
+    --white: #FFFFFF;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 100px 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgba(255, 255, 255, 0.262);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: 0.3s ease-in-out;
+}
+
+.logo>a {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(45deg,rgb(206, 0, 0), rgb(255, 80, 40));
+    color: var(--white) !important;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(230, 81, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 81, 0, 0.4);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.hero {
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-image: url('./assets/images/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 80px; 
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.252), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.rounded-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.rounded-image:hover {
+    transform: scale(1.02);
+}
+
+/* Timings Section */
+.bg-light {
+    background-color: var(--light-bg);
+    /* background-color: rgba(255, 172, 149, 0.8); */
+}
+
+.timing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.card-effect {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(230, 81, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card-effect:hover {
+    transform: translateY(-10px);
+}
+
+.card-effect h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.card-effect span {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* --- Pooja Menu (Vazhipadu) Styling --- */
+.pooja-menu-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 40px auto; /* Adds space between this and the Google form */
+}
+
+.menu-title {
+    text-align: center;
+    color: #D32F2F; /* Deep temple red matching the board */
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.pooja-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns side-by-side */
+    gap: 40px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: baseline; /* Aligns the text bottoms perfectly */
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+/* 1. Put the Pooja Name first */
+.menu-item span:first-child {
+    order: 1;
+    max-width: 75%; 
+    text-align: left;
+    word-break: break-word; 
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* 3. Put the Price at the end */
+.menu-item .price {
+    order: 3;
+    font-weight: 800;
+    color: var(--primary-color);
+    white-space: nowrap;
+    flex-shrink: 0; 
+}
+
+/* 2. Put the Dotted Line in the middle */
+.menu-item::after {
+    content: "";
+    order: 2;
+    flex-grow: 1;
+    border-bottom: 2px dotted #aaa;
+    margin: 0 10px;
+    /* This raises the dots slightly to align with the middle of the text */
+    position: relative;
+    top: -5px; 
+}
+
+.form-wrapper {
+    background: rgba(255, 255, 255, 0); /* Bright white with slight transparency */
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.form-header{
+    background: rgba(40, 39, 39, 0.352);
+    border-radius: 20px;
+    padding: 20px;
+}
+/* Footer */
+footer {
+    background: var(--light-bg);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 30px;
+}
+
+
+/* The body of the forms pages needs a dark background just in case the image takes a second to load */
+.forms-page-body {
+    background-color: var(--dark-text);
+}
+/* The full-screen background section for the forms */
+.forms-background {
+    min-height: 100vh;
+    padding-top: 120px; /* Gives space so the navbar doesn't cover the title */
+    padding-bottom: 50px;
+    position: relative;
+
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+/* The dark shadow overlay over the image */
+.forms-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Darkens the background image so the white form stands out clearly */
+    background: linear-gradient(rgba(0, 0, 0, 0.252), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+/* Forces the content to sit ON TOP of the dark overlay */
+.relative-z {
+    position: relative;
+    z-index: 2;
+}
+.text-white {
+    color: var(--white);
+}
+/* The Title Area above the form */
+.form-header {
+    margin-bottom: 30px;
+}
+.form-header h1 {
+    font-size: 3rem;
+    color: var(--secondary-color); /* The gold color */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+/* The actual white box holding the Google Form */
+.single-form-box {
+    background: rgba(235, 230, 230, 0.597); /* Bright white with slight transparency */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    
+    width: 100%;
+    /* Max-width prevents the form from looking stretched out on wide laptop screens */
+    max-width: 700px; 
+    margin: 0 auto;
+}
+/* The container holding the iframe */
+.iframe-wrapper {
+    width: 100%;
+    overflow-y: hidden; 
+    border-radius: 10px;
+}   
+.iframe-wrapper iframe {
+    width: 100% !important;
+    max-width: 100%;
+    border: none;
+}
+
+
+/* Responsive Design for Mobile Phones */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        background-position: 27% center; 
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .nav-links {
+        display: none; /* In a real app, you'd add a hamburger menu here */
+    }
+    nav{
+        justify-content: center;
+        padding: 10px 20px;
+    }
+    .form-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .single-form-box {
+        padding: 10px; 
+    }
+
+    /* --- Pooja Menu Mobile Fixes --- */
+    .pooja-menu {
+        grid-template-columns: 1fr; /* Stack into 1 column */
+        gap: 0;
+    }
+
+    .pooja-menu-wrapper {
+        padding: 15px; /* Less padding gives the text more room */
+        width: 95%; /* Prevents the box from hitting the absolute edges of the phone */
+    }
+
+    .menu-item {
+        font-size: 0.95rem; /* Slightly smaller font to fit narrow screens */
+        align-items: flex-end; /* If text wraps to 2 lines, this keeps the price at the bottom */
+    }
+
+    .menu-item span:first-child {
+        max-width: 65%; /* Forces long text to wrap instead of pushing the price out */
+        line-height: 1.3;
+    }
+
+    .menu-item::after {
+        min-width: 5px; /* Allows the dotted line to shrink very small if needed */
+        margin: 0 5px;
+    }
+}
+
