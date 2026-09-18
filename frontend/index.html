@@ -209,6 +209,7 @@
             <img src="./assets/images/qr.jpg" alt="UPI QR Code" style="width: 180px; height: 180px; border-radius: 10px; border: 2px solid #ddd; margin-bottom: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
             <div onclick="copyToClipboard(this, 'ammanovil232qr@fbl')" style="cursor: pointer; text-align: center; padding-top: 1px; border-top: 1px; font-weight: 800; color: var(--primary-color); font-size: 1.1rem;">
                 UPI ID : ammanovil232qr@fbl
+                <br><span style="font-size: 0.8rem; color: #888;">(Tap to copy)</span>
             </div>
             <div style="font-size: 0.95rem; font-weight: bold; margin-bottom: 25px; color: #2C1B10; text-align: left; background: #f9f9f9; padding: 15px; border-radius: 10px;">
                 Please WhatsApp us:<br>
@@ -226,8 +227,31 @@
             <p style="font-size: 0.85rem; color: #777;">Or call for assistance:<br>📞 <a href="tel:8848034193" style="color: #D32F2F;">88480 34193</a> | <a href="tel:7736194494" style="color: #D32F2F;">77361 94494</a></p>
         </div>
     </div>
+    <!-- Donation Popup Modal -->
+    <div id="donationPopup" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDonationPopup()">&times;</span>
+            
+            <h3 style="color: var(--primary-color); margin-bottom: 10px; font-size: 1.8rem;">Donate to the Temple</h3>
+            <p style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">
+                Your generous contributions help us maintain the temple and conduct daily rituals. May the Devi bless you!
+            </p>
+            
+            <!-- QR Code Image -->
+            <img src="./assets/images/qr.jpg" alt="UPI QR Code" style="width: 150px; height: 150px; border-radius: 10px; border: 2px solid #ddd; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            
+            <!-- Clickable UPI ID -->
+            <div onclick="copyToClipboard(this, 'ammanovil232qr@fbl')" style="cursor: pointer; text-align: center; padding: 15px; background: #fff5f5; border-radius: 10px; font-weight: 800; color: var(--primary-color); font-size: 1.1rem; margin-bottom: 20px;">
+                UPI ID : ammanovil232qr@fbl
+                <br><span style="font-size: 0.8rem; color: #888;">(Tap to copy)</span>
+            </div>
+
+            <p style="font-size: 0.85rem; color: #777;">For large donations or Annadanam, please contact:<br>📞 88480 34193</p>
+        </div>
+    </div>
     <footer>
-            <p>&copy; 2026 Amman Kovil Devi Temple. All rights reserved.</p>
+            <p>&copy; 2026 Amman Kovil Devi Temple.</p>
+            <a class="btn-primary" href="javascript:void(0)" onclick="openDonationPopup()" style="margin-top: 0px;">Donate 🙏</a>
     </footer>
 
     <script src="script.js"></script>

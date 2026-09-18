@@ -379,6 +379,10 @@ footer {
     color: var(--primary-color);
     text-align: center;
     padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
 
 

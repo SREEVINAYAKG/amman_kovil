@@ -9,22 +9,33 @@ window.addEventListener('scroll', function() {
         navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
     }
 });
-
-// Open the popup
+/* --- Pooja Booking Popup --- */
 function openPopup() {
     document.getElementById('bookingPopup').style.display = 'flex';
 }
 
-// Close the popup
 function closePopup() {
     document.getElementById('bookingPopup').style.display = 'none';
 }
 
-// Close the popup if the user taps the dark background outside the white box
+/* --- Donation Popup --- */
+function openDonationPopup() {
+    document.getElementById('donationPopup').style.display = 'flex';
+}
+function closeDonationPopup() {
+    document.getElementById('donationPopup').style.display = 'none';
+}
+
+/* --- Close popups when clicking the dark background --- */
 window.onclick = function(event) {
-    let popup = document.getElementById('bookingPopup');
-    if (event.target == popup) {
-        popup.style.display = 'none';
+    let bookingPopup = document.getElementById('bookingPopup');
+    let donationPopup = document.getElementById('donationPopup');
+    
+    if (event.target == bookingPopup) {
+        bookingPopup.style.display = 'none';
+    }
+    if (event.target == donationPopup) {
+        donationPopup.style.display = 'none';
     }
 }
 
