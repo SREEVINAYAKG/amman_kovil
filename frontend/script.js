@@ -27,3 +27,21 @@ window.onclick = function(event) {
         popup.style.display = 'none';
     }
 }
+
+function copyToClipboard(element, textToCopy) {
+    // Copies the text to the clipboard
+    navigator.clipboard.writeText(textToCopy);
+    
+    // Save the original text
+    let originalText = element.innerHTML;
+    
+    // Change the text to show it worked
+    element.innerHTML = "✅ Copied!";
+    element.style.color = "#25D366"; 
+    
+    // Change it back after 2 seconds
+    setTimeout(function() {
+        element.innerHTML = originalText;
+        element.style.color = "var(--primary-color)";
+    }, 2000);
+}
