@@ -300,6 +300,7 @@ h2 {
 /* =========================================
    SPECIAL OFFERINGS CARDS
    ========================================= */
+
 .offerings-grid {
     display: grid;
     /* Automatically creates columns based on screen size */
