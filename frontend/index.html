@@ -7,33 +7,53 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
     <link rel="manifest" href="./assets/icons/site.webmanifest">
-    <title>Amman Kovil Kottarakara</title>
-    <meta name="description" content="Official website of Amman Kovil Devi Temple, Kottarakkara. View daily darshan timings, temple history, and book vazhipadu (poojas) online.">
+    <title>Sree Amman Kovil Devi Temple</title>
+    <meta name="description" content="Official website of Sree Amman Kovil Devi Temple, Kottarakkara. View daily darshan timings, temple history, and book vazhipadu (poojas) online.">
     <meta name="keywords" content="Amman Kovil, Kottarakkara Temple, Devi Temple Kottarakkara, Vazhipadu booking, Kerala Temples">
     <meta name="google-site-verification" content="guGHs4OOTQLAjf2KlelqfB1RVMR1wFfJDpfUj0dbdkY" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <nav id="navbar">
         <div class="logo">🕉️ <a href="index.html">Amman Kovil Kottarakara</a></div>
-        <ul class="nav-links">
-            <li><a href="#home" class="btn-primary">Home</a></li>
-            <li><a href="#about" class="btn-primary">About</a></li>
-            <li><a href="#timings" class="btn-primary">Timings</a></li>
-            <li><a href="#contact" class="btn-primary">Contact Us   </a></li>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#about">Location</a></li>
+            <li><a href="#timings">Timings</a></li>
+            <li><a href="#offeringss">offerings</a></li>
+            <li><a href="#contact" class="btn-primary">Contact Us</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
     </section>
+
+    <!-- Temple History Teaser -->
+<section id="history-bg" class="bg-light">
+    <section id="history" class="container section-padding text-center">
+        <h2>Temple History & Heritage</h2>
+        <p style="max-width: 800px; margin: 0 auto; color: #555; line-height: 1.8; font-size: 1.05rem;">
+            Shri Amman Kovil Devi Temple has a rich and divine heritage that spans many generations.
+        </p>
+        <a href="javascript:void(0)" onclick="openHistoryPopup()" class="btn-primary" style="display: inline-block; margin-top: 25px;">Read Full History</a>
+    </section>
+</section>
+
     <!-- Location & History Section -->
     <section id="about" class="container section-padding">
         <div class="about-grid">
             <div class="about-text">
-                <h2>Location & History</h2>
+                <h2>Our Location</h2>
                 <p>Located in the heart of our community, the temple has been a spiritual beacon for decades. We are dedicated to preserving our rich cultural heritage and providing a peaceful environment for all devotees.</p><br>
                 <p><strong>Address:</strong> പടിഞ്ഞാറ്റിൻകര, ചെന്തറ, കൊട്ടാരക്കര (Padinjattinkara, Chenthara, Kottarakkara)</p>
                 
@@ -79,7 +99,7 @@
                 </div>
             </div>
             <!-- Vazhipadu Details (Pooja Menu) -->
-            <div class="pooja-menu-wrapper">
+            <div class="pooja-menu-wrapper" id="offeringss">
                 <h2 class="menu-title">വഴിപാട് വിവരം</h2>
                 <div class="pooja-menu">
                     <!-- Column 1 -->
@@ -264,6 +284,22 @@
             </a>
 
             <p style="font-size: 0.85rem; color: #777;">For large donations or Annadanam, please contact:<br>📞 <a href="tel:8848034193" style="color: #D32F2F;">88480 34193</a> | <a href="tel:7736194494" style="color: #D32F2F;">77361 94494</a></p>
+        </div>
+    </div>
+
+<!-- History Popup Modal -->
+    <div id="historyPopup" class="modal-overlay">
+        <div class="modal-content" style="max-width: 600px; text-align: center;">
+            <span class="close-btn" onclick="closeHistoryPopup()">&times;</span>
+            
+            <h3 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem;">The Divine History</h3>
+            
+            <div style="padding: 20px 10px; color: #444; line-height: 1.8; font-size: 1rem; background: #fff9f0; border-radius: 10px; border: 1px dashed #ccc;">
+                <p>🙏</p>
+                <p><strong>Coming Soon</strong></p>
+                <p>The complete history, myths, and heritage of Shri Amman Kovil Devi Temple are currently being compiled by the temple committee. </p>
+                <p>Please check back soon to read the full, detailed story of the Devi's blessings and the origins of our temple.</p>
+            </div>
         </div>
     </div>
     <footer>

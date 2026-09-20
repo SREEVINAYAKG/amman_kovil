@@ -26,16 +26,38 @@ function closeDonationPopup() {
     document.getElementById('donationPopup').style.display = 'none';
 }
 
+function openHistoryPopup() {
+    document.getElementById('historyPopup').style.display = 'flex';
+}
+function closeHistoryPopup() {
+    document.getElementById('historyPopup').style.display = 'none';
+}
+
+
 /* --- Close popups when clicking the dark background --- */
 window.onclick = function(event) {
     let bookingPopup = document.getElementById('bookingPopup');
     let donationPopup = document.getElementById('donationPopup');
+    let historyPopup = document.getElementById('historyPopup');
     
     if (event.target == bookingPopup) {
         bookingPopup.style.display = 'none';
     }
     if (event.target == donationPopup) {
         donationPopup.style.display = 'none';
+    }
+    if (event.target == historyPopup) {
+        historyPopup.style.display = 'none';
+    }
+
+
+    let menu = document.getElementById("navLinks");
+    let hamburger = document.querySelector(".hamburger");
+    
+    // If the menu is open, AND the user didn't click inside the menu, AND they didn't click the hamburger icon itself...
+    if (menu && menu.classList.contains('active') && !menu.contains(event.target) && !hamburger.contains(event.target)) {
+        menu.classList.remove("active"); // Close it!
+        hamburger.classList.remove("open"); 
     }
 }
 
@@ -56,3 +78,22 @@ function copyToClipboard(element, textToCopy) {
         element.style.color = "var(--primary-color)";
     }, 2000);
 }
+
+
+/* --- Hamburger Menu Logic --- */
+function toggleMenu() {
+    let menu = document.getElementById("navLinks");
+    let hamburger = document.querySelector(".hamburger");
+    
+    menu.classList.toggle("active");
+    hamburger.classList.toggle("open"); // Animates the X!
+}
+
+// Automatically close the menu when any link is clicked on a phone!
+let navItems = document.querySelectorAll('.nav-links a');
+navItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+        document.getElementById("navLinks").classList.remove("active");
+        document.querySelector(".hamburger").classList.remove("open");
+    });
+});

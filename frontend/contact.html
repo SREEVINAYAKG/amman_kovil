@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Pooja - Amman Kovil Temple</title>
+    <title>Contact Us - Amman Kovil Temple</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,9 +12,14 @@
     <!-- Navigation Bar -->
     <nav id="navbar">
         <div class="logo">🕉️ <a href="index.html">Amman Kovil Kottarakara</a></div>
-        <ul class="nav-links">
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
-            <li><a href="javascript:void(0)" onclick="openPopup()">Book Pooja</a></li>
+            <li><a href="javascript:void(0)" onclick="openPopup()" class="btn-primary">Book Pooja</a></li>
         </ul>
     </nav>
     <!-- Single Form Section -->
