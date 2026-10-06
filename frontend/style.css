@@ -554,6 +554,41 @@ footer {
 .close-btn:hover { color: #333; }
 
 
+/* Contact Page Social Buttons */
+.social-btn-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.btn-whatsapp, .btn-facebook {
+    flex: 1;
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-facebook {
+    background: #1877F2;
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+}
+
+
 /* Responsive Design for Mobile Phones */
 @media (max-width: 768px) {
     .about-grid {
