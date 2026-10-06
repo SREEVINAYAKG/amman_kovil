@@ -408,6 +408,17 @@ h2 {
 
 
 /* Footer */
+/* footer {
+    background: var(--light-bg);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+} */
+
 footer {
     background: var(--light-bg);
     color: var(--primary-color);
@@ -417,6 +428,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 50px;
+    flex-wrap: wrap; /* Allows items to flow naturally */
 }
 
 
@@ -703,6 +715,10 @@ footer {
     /* JavaScript will add this class to open the menu */
     .nav-links.active {
         display: flex;
+    }
+    footer {
+        flex-direction: column;
+        gap: 20px; /* Reduces the huge 50px gap for mobile */
     }
 }
 
